@@ -49,7 +49,7 @@ class PredenunciaController extends Controller
         $predenuncia->descripcion=$request->get('descripcion');
         $predenuncia->save();
         
-         Mail::to('predenuncia.fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida);
+         Mail::to('jesus21c.jrv@gmail.com')->send(new DenunciaRecibida);
         DB::commit();
         return redirect()->back();
     }
