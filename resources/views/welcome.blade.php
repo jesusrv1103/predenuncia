@@ -248,9 +248,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     </div>
                                                 </div>
                                             </div>
-
+{{--
                                             <input type="hidden" class="form-control" value={{($ultimoIdPredenuncia ->id)+1}} name="predenuncia_id"/>
-                                            
+   --}}                                         
 
 
                                             <div class="form-group row">
@@ -726,7 +726,7 @@ function soloNumeros(e){
   }
 }
 
-
+{{--
 var myDropzone = new Dropzone('.dropzone', {
     url: '/predenuncias/{{($ultimoIdPredenuncia ->id)+1}}/evidencia',
     acceptedFiles:'image/*,.mp3,.mp4,application/pdf,.psd,.zip,.rar',
@@ -746,6 +746,6 @@ var myDropzone = new Dropzone('.dropzone', {
     Dropzone.autoDiscover = false;
 </script>
 
-
+--}}
 </html>
 

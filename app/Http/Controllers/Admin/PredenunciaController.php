@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\DB;
 class PredenunciaController extends Controller
 {
     public function index(){
-        $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
+//        $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
         $municipios=Municipio::where('estado_id','=','32')->get();
 
         
-        return view('welcome',compact('municipios','ultimoIdPredenuncia'));
+        return view('welcome',compact('municipios'));//,'ultimoIdPredenuncia'));
         
     }
 
@@ -49,7 +49,7 @@ class PredenunciaController extends Controller
         $predenuncia->descripcion=$request->get('descripcion');
         $predenuncia->save();
         
-         Mail::to('jesus21c.jrv@gmail.com')->send(new DenunciaRecibida);
+         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida);
         DB::commit();
         return redirect()->back();
     }
