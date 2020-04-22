@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\Estado;
+use App\Admin\PredenunciaEvidencia;
 use App\Admin\Municipio;
 use App\Admin\Denunciante;
 use App\Admin\Predenuncia;
@@ -12,17 +13,18 @@ use App\Admin\LugarHecho;
 use Mail;  
 use App\Mail\DenunciaRecibida;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 
 
 class PredenunciaController extends Controller
 {
     public function index(){
-//        $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
+      $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
         $municipios=Municipio::where('estado_id','=','32')->get();
 
         
-        return view('welcome',compact('municipios'));//,'ultimoIdPredenuncia'));
+        return view('welcome',compact('municipios','ultimoIdPredenuncia'));
         
     }
 
@@ -34,12 +36,16 @@ class PredenunciaController extends Controller
         $denunciante->direccion=$request->get('direccion');
         $denunciante->correo_electronico=$request->get('email');
         $denunciante->telefono=$request->get('telefono');
+        $denunciante->forma_notificacion=$request->get('forma_notificacion');
         $denunciante->save();
         $denunciante_id= $denunciante->id;
-        
+       
         $lugar_hechos = new LugarHecho;
+        $lugar_hechos->fecha=$request->get('fecha_hechos');
         $lugar_hechos->calle=$request->get('calle');
         $lugar_hechos->numero=$request->get('numero');
+       $lugar_hechos->colonia=$request->get('colonia');
+       
         $lugar_hechos->municipio_id=$request->get('param');
         $lugar_hechos->save();
         $lugar_hechos_id= $lugar_hechos->id;
@@ -48,9 +54,22 @@ class PredenunciaController extends Controller
         $predenuncia->lugar_hechos_id= $lugar_hechos_id;
         $predenuncia->descripcion=$request->get('descripcion');
         $predenuncia->save();
-        
-         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida);
+        $id_predenuncia= $predenuncia->id;
+        $mensaje=$request;
+
+
+     
+        $evidencias= PredenunciaEvidencia::
+        select('imagen')
+        ->where('predenuncia_id','=',$id_predenuncia)
+        ->get();
+        $evidencias=$evidencias;
+  
+
         DB::commit();
+        
+         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
+     
         return redirect()->back();
     }
 }
