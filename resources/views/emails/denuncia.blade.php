@@ -33,8 +33,18 @@
         </tr>
 
         <tr>
+
+            
             <td> Forma de Notificación: </td>
-            <td>{{$mensaje['forma_notificacion']}}</td>
+       
+            <td>@if(($mensaje['notificacion_correo']=="on") && ($mensaje['notificacion_telefono']=="null"))
+                  CORREO
+                @elseif(($mensaje['notificacion_correo']=="null") && ($mensaje['notificacion_telefono']=="on"))
+                  TELEFONO
+               @elseif(($mensaje['notificacion_correo']=="on") && ($mensaje['notificacion_telefono']=="on"))
+                  CORREO/TELEFONO
+               @endif
+            </td>
         </tr>
     </table>
     <table>

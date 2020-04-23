@@ -19,7 +19,8 @@ class CreateDenunciantesTable extends Migration
             $table->string('direccion');
             $table->string('correo_electronico')->nullable($value = true);
             $table->string('telefono')->nullable($value = true);
-            $table->enum('forma_notificacion', ['CORREO', 'TELEFONO'])->default('CORREO');
+            $table->boolean('notificacion_correo')->default(0);
+            $table->boolean('notificacion_telefono')->default(0);
             $table->timestamps();
         });
     }

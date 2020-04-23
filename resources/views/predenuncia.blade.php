@@ -221,11 +221,18 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <!-- begin:: Content -->
                         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+                               
+
+                               
                             <div class="row">
                                 <div class="col-md-3">
 
                                 </div>
+                               
                                 <div class="kt-portlet col-md-6">
+
+                                    
+
                                     <div class="kt-portlet__head">
                                         <div class="kt-portlet__head-label">
                                             <h3 class="kt-portlet__head-title">
@@ -233,6 +240,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </h3>
                                         </div>
                                     </div>
+
+                                    @if (session()->has('flash'))
+                                    <div class="alert alert-success" role="alert">
+                                            <strong>{{session('flash')}}</strong>   
+                                      </div>
+                                    @endif
 
                                     <!--begin::Form-->
                                     <form class="kt-form kt-form--label-right" method="POST"
@@ -312,28 +325,28 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
 
-                                            <div class="form-group row">
-                                                    <label  class="col-2 col-form-label">Forma de Notificación: </label>
-                                                    <div class="col-10">
-													<div class="kt-radio-inline">
-														<label class="kt-radio">
-															<input type="radio" name="forma_notificacion"  required="required" value="telefono">  Teléfono
-															<span></span>
-														</label>
-														<label class="kt-radio">
-															<input type="radio" name="forma_notificacion"  required="required" value="correo"> Correo Electrónico
-															<span></span>
-														</label>
-														
-													</div>
-													<span class="form-text text-muted">Por favor
-                                                            selecciona la forma en que deseas recibir
-                                                            notificaciones</span>
-                                                    </div>
-												</div>
 
                                         
 
+                                                <div class="form-group row" >
+                                                        <label class="col-2 col-form-label">Forma de Notificación: </label>
+                                                        <div class="col-10">
+                                                        <div class="kt-checkbox-inline">
+                                                            <label class="kt-checkbox">
+                                                                <input type="checkbox" name="notificacion_telefono" checked='checked'> Teléfono
+                                                                <span></span>
+                                                            </label>
+                                                            <label class="kt-checkbox">
+                                                                <input type="checkbox" name="notificacion_correo"> Correo Electrónico
+                                                                <span></span>
+                                                            </label>
+                                                        
+                                                        </div>
+                                                        <span class="form-text text-muted">Por favor
+                                                                selecciona la forma en que deseas recibir
+                                                                notificaciones</span>
+                                                        </div>
+                                                    </div>
 
 
                                             <div class="form-group form-group-last">
@@ -470,8 +483,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         
                                                         <div class="col-md-4 btn-lg">
                                                             <button type="submit"
-                                                                class="btn btn-success">Realizar predenuncia</button>
+                                                                class="btn btn-success" id="kt_sweetalert_demo_3_3">Realizar predenuncia</button>
 
+
+
+                                                                
                                                         </div>
                                                         <div class="col-md-4">
 

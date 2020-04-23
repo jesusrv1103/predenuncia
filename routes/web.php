@@ -12,7 +12,12 @@
 */
 
 
-Route::get('/', 'Admin\PredenunciaController@index')->name('admin.predenuncia.index');
+Route::get('predenuncias', 'Admin\PredenunciaController@index')->name('admin.predenuncia.index');
 Route::post('predenuncias', 'Admin\PredenunciaController@store')->name('admin.predenuncias.store');
 
 Route::post('predenuncias/{id}/evidencia', 'Admin\EvidenciaPredenunciaController@store')->name('predenuncias.evidencias.store');
+
+
+Route::get('/', function () {
+  return view('welcome');
+});
