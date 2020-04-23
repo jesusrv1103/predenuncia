@@ -38,6 +38,7 @@ class DenunciaRecibida extends Mailable
         
        
       $email= $this->view('emails.denuncia');
+      $email->subject('PREDENUNCIA RECIBIDA');
     
       
        foreach($this->evidencias as $evidencia){
