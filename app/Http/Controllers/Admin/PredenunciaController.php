@@ -75,7 +75,7 @@ class PredenunciaController extends Controller
 
         DB::commit();
        
-         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
+         Mail::to('predenuncia@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
         // SweetAlert::message('Welcome back!');
         return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
 
