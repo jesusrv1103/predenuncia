@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class PredenunciaEvidencia extends Model
 {
     protected $guarded = [];
+    protected $table ="predenuncia_evidencias";
 }

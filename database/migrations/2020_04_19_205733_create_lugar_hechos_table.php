@@ -15,8 +15,10 @@ class CreateLugarHechosTable extends Migration
     {
         Schema::create('lugar_hechos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('fecha')->nullable($value = true);
             $table->string('calle')->nullable($value = true);
-            $table->string('numero');
+            $table->string('colonia')->nullable($value = true);
+            $table->string('numero')->nullable($value = true);
             $table->BigInteger('municipio_id')->unsigned();
             $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->timestamps();

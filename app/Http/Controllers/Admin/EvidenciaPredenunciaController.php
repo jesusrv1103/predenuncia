@@ -19,12 +19,15 @@ class EvidenciaPredenunciaController extends Controller
         ]);
         */
         $evidencia = request()->file('evidencia')->store('public');
-        $evidenciaUrl= Storage::url($evidencia);
+        $evidenciaUrl= $evidencia;
+        //$evidenciaUrl= Storage::url($evidencia);
         
         PredenunciaEvidencia::create([
             'imagen' => $evidenciaUrl,
             'predenuncia_id' => $request->id
         ]);
+
+        //esto es una prueba
     }
 
     public function destroy(PredenunciaEvidencia $evidencia)
