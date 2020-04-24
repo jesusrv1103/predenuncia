@@ -22,7 +22,7 @@ use UxWeb\SweetAlert\SweetAlert;
 class PredenunciaController extends Controller
 {
     public function index(){
-      $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
+        $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
         $municipios=Municipio::where('estado_id','=','32')->get();
 
         
@@ -61,11 +61,6 @@ class PredenunciaController extends Controller
         $predenuncia->lugar_hechos_id= $lugar_hechos_id;
         $predenuncia->descripcion=$request->get('descripcion');
         $predenuncia->save();
-<<<<<<< HEAD
-        $mensaje=$request;
-        
-         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje));
-=======
         $id_predenuncia= $predenuncia->id;
         $mensaje=$request;
 
@@ -78,7 +73,7 @@ class PredenunciaController extends Controller
         $evidencias=$evidencias;
   
 
->>>>>>> 5beacfee1b669458231fe734f27e0e8cf7a38bc5
+
         DB::commit();
         //return $request;
         $subject = "PREDENUNCIA RECIBIDA DE " .$request->get('nombre');
