@@ -48,8 +48,9 @@ class PredenunciaController extends Controller
         $predenuncia->lugar_hechos_id= $lugar_hechos_id;
         $predenuncia->descripcion=$request->get('descripcion');
         $predenuncia->save();
+        $mensaje=$request;
         
-         Mail::to('jesus21c.jrv@gmail.com')->send(new DenunciaRecibida);
+         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje));
         DB::commit();
         return redirect()->back();
     }

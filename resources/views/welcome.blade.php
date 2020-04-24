@@ -249,7 +249,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-                                            <input type="hidden" class="form-control" value={{($ultimoIdPredenuncia ->id)+1}} name="predenuncia_id"/>
+                                            <input type="hidden" class="form-control" value="{{($ultimoIdPredenuncia ->id)+1}}" name="predenuncia_id"/>
                                             
 
 

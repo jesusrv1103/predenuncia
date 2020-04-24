@@ -16,9 +16,14 @@ class DenunciaRecibida extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+     public $subject="PREDENUNCIA";
+
+     public $mensaje;
+
+    public function __construct($mensaje)
     {
-        //
+        $this->mensaje=$mensaje;
     }
 
     /**
