@@ -1,82 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" >
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PREDENUNCIA</title>
 </head>
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
+
 <body>
+      
+    <h1>PREDENUNCIA RECIBIDA</h1>
+    <table>
+        <tr>
+            <th colspan="2">Datos del predenunciante</th>
+        </tr>
+        <tr>
+            <td> Nombre: </td>
+            <td> {{$mensaje['nombre']}}</td>
+        </tr>
+        <tr>
+            <td>Domicilio: </td>
+            <td>{{$mensaje['direccion']}}</td>
+        </tr>
+        <tr>
+            <td>Correo electronico: </td>
+            <td>{{$mensaje['email']}}</td>
+        </tr>
+        <tr>
+            <td>Telefono: </td>
+            <td>{{$mensaje['telefono']}}</td>
+        </tr>
+
+        <tr>
+
+            
+            <td> Forma de Notificación: </td>
+                
+            <td>
+           
+           
+                @if(($mensaje['notificacion_correo']=="on") && ($mensaje['notificacion_telefono']==null))
+                   CORREO
+              
+                @elseif(($mensaje['notificacion_correo']==null) && ($mensaje['notificacion_telefono']=="on"))
+                  TELEFONO
+               @elseif(($mensaje['notificacion_correo']=="on") && ($mensaje['notificacion_telefono']=="on"))
+                  CORREO/TELEFONO
+               @endif
+
+              
+            </td>
+        </tr>
+    </table>
+    <table>
+
+        <tr>
+            <th colspan="2">Datos de los hechos</th>
+        </tr>
+        <tr>
+            <td>Fecha: </td>
+            <td>{{$mensaje['fecha_hechos']}}</td>
+        </tr>
+        <tr>
+                <td>Municipio: </td>
+                <td>{{$mensaje['nombre_municipio']}}</td>
+            </tr>
+
+        <tr>
+            <td>Calle: </td>
+            <td>{{$mensaje['calle']}}</td>
+        </tr>
+        <tr>
+            <td>Numero: </td>
+            <td>{{$mensaje['numero']}}</td>
+        </tr>
+        <tr>
+            <td>Colonia: </td>
+            <td>{{$mensaje['colonia']}}</td>
+        </tr>
+
+    </table>
+
+    <table>
+        <tr><th>Narracion de los hechos</th></tr>
+        <tr><td>{{$mensaje['descripcion']}}</td></tr>
+    </table>
 
 
-<table>
-<tr>
-<th colspan="2">DATOS DEL DENUNCIANTE</th>
-</tr>
-    <tr>
-        <td>NOMBRE: </td>
-        <td>{{$mensaje['nombre']}}</td>
-    </tr>
-    <tr>
-        <td>DOMICILIO: </td>
-        <td>{{$mensaje['direccion']}}</td>
-    </tr>
-    <tr>
-        <td>TELEFONO: </td>
-        <td>{{$mensaje['telefono']}}</td>
-    </tr>
-    <tr>
-        <td>FORMA DE NOTIFICACION: </td>
-        <td>{{$mensaje['nombre']}}</td>
-    </tr>
-</table>
-
-<br>
-
-
-<table>
-<tr >
-<th colspan="2">DATOS DE LOS HECHOS</th>
-</tr>
-    <tr>
-        <td>FECHA: </td>
-        <td>{{$mensaje['fecha']}}</td>
-    </tr>
-    <tr>
-        <td>CALLE: </td>
-        <td>{{$mensaje['calle']}}</td>
-    </tr>
-    <tr>
-        <td>NUMERO: </td>
-        <td>{{$mensaje['numero']}}</td>
-    </tr>
-    <tr>
-        <td>COLONIA: </td>
-        <td>{{$mensaje['colonia']}}</td>
-    </tr>
-    <tr>
-        <td>MUNICIPIO: </td>
-        <td>{{$mensaje['municipio']}}</td>
-    </tr>
-
-</table>
-<br>
-<table>
-    <tr>
-        <th>NARRACION DE LOS HECHOS</th>
-    </tr>
-
-    <tr>
-   <td> {{$mensaje['descripcion']}}</td>
-    </tr>
-</table>
-
-
-
-          
+  
 </body>
+
 </html>

@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-
+use Illuminate\Support\Facades\Storage;
 class DenunciaRecibida extends Mailable
 {
     use Queueable, SerializesModels;
@@ -16,14 +16,14 @@ class DenunciaRecibida extends Mailable
      *
      * @return void
      */
-
-     public $subject="PREDENUNCIA";
-
-     public $mensaje;
-
-    public function __construct($mensaje)
+    public $mensaje;
+   
+    protected $evidencias;
+    
+    public function __construct($mensaje,$evidencias)
     {
         $this->mensaje=$mensaje;
+        $this->evidencias=$evidencias;
     }
 
     /**
@@ -33,6 +33,24 @@ class DenunciaRecibida extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.denuncia');
+     
+     
+        
+       
+      $email= $this->view('emails.denuncia');
+      $email->subject('PREDENUNCIA RECIBIDA');
+    
+      
+       foreach($this->evidencias as $evidencia){
+        
+        $url=storage_path()."/app/".$evidencia['imagen'];
+        $email->attach($url);
+       }
+      
+    
+    return $email;
+    
+ 
     }
 }
+
