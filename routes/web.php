@@ -17,7 +17,11 @@ Route::post('predenuncias', 'Admin\PredenunciaController@store')->name('admin.pr
 
 Route::post('predenuncias/{id}/evidencia', 'Admin\EvidenciaPredenunciaController@store')->name('predenuncias.evidencias.store');
 
+Route::get('predenuncias/{id}/re', 'Admin\PredenunciaRecibidasController@store')->name('predenuncias.recibidas.index');
+
 
 Route::get('/', function () {
   return view('welcome');
 });
+Auth::routes();
+

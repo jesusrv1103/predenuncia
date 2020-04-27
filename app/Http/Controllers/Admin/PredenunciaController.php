@@ -22,7 +22,7 @@ use UxWeb\SweetAlert\SweetAlert;
 class PredenunciaController extends Controller
 {
     public function index(){
-      $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
+        $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
         $municipios=Municipio::where('estado_id','=','32')->get();
 
         
@@ -72,6 +72,7 @@ class PredenunciaController extends Controller
         ->get();
         $evidencias=$evidencias;
   
+
 
         DB::commit();
         //return $request;
