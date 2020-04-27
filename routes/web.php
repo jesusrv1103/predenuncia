@@ -23,3 +23,5 @@ Route::get('predenuncias/{id}/re', 'Admin\PredenunciaRecibidasController@store')
 Route::get('/', function () {
   return view('welcome');
 });
+Auth::routes();
+
