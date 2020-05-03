@@ -78,8 +78,11 @@ class PredenunciaController extends Controller
 
         DB::commit();
         //return $request;
-        $subject = "PREDENUNCIA RECIBIDA DE " .$request->get('nombre');
-         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
+
+        config(['mail.from.address' => 'jramirezv@fiscaliazacatecas.gob.mx']);
+        config(['mail.password' => '5W%#sjdj0D03b&LuX3h1']);
+         Mail::to('jesus21c.jrv@gmail.com')->send(new DenunciaRecibida($mensaje,$evidencias));
+
         // SweetAlert::message('Welcome back!');
          $this->generarFolio();
         
