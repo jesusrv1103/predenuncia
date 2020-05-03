@@ -34,6 +34,34 @@
             <h1>FISCALIA GENERAL DE JUSTICIA DEL ESTADO DE ZACATECAS</h1>
         </div>
 
+       
+
+
+
+                            <center>
+
+                                <h1 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    PREDENUNCIA</h1>
+                            </center>
+
+
+
+
+                            <!-- end: Header Menu -->
+                        </div>
+                    </div>
+
+                </div>
+
+            
+
+
+
+
         <center>
             <img src="/assets/logos_fiscalia/original180x90.png" width="25%" height="25%" class="img-fluid" alt="Responsive image">
         </center>
@@ -80,13 +108,13 @@
             x.className = x.className.replace("w3-row-padding", "w3-row");
           }
         }
-        
+
         // Open and close sidebar
         function w3_open() {
           document.getElementById("mySidebar").style.width = "100%";
           document.getElementById("mySidebar").style.display = "block";
         }
-        
+
         function w3_close() {
           document.getElementById("mySidebar").style.display = "none";
         }
