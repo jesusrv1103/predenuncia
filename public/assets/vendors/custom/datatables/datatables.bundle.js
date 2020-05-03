@@ -11452,7 +11452,7 @@
 			 * * `\_PAGES\_` - Total number of pages of data in the table
 			 *
 			 *  @type string
-			 *  @default Showing _START_ to _END_ of _TOTAL_ entries
+			 *  @default Showing _START_ to _END_ of _TOTAL_ registros
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.info
@@ -11466,7 +11466,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Mostrando _START_ a _END_ de _TOTAL_ registros",
 	
 	
 			/**
@@ -11482,12 +11482,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "infoEmpty": "No entries to show"
+			 *          "infoEmpty": "No hay registros para mostrar"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 a 0 de 0 registros",
 	
 	
 			/**
@@ -11504,12 +11504,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "infoFiltered": " - filtering from _MAX_ records"
+			 *          "infoFiltered": " - filtrado de _MAX_ registros"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(filtrado de _MAX_ total registros)",
 	
 	
 			/**
@@ -11527,7 +11527,7 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "infoPostFix": "All records shown are derived from real information."
+			 *          "infoPostFix": "Todos los registros mostrados se derivan de información real."
 			 *        }
 			 *      } );
 			 *    } );
@@ -11595,7 +11595,7 @@
 			 * with a default select list of 10, 25, 50 and 100, and can be replaced
 			 * with a custom select box if required.
 			 *  @type string
-			 *  @default Show _MENU_ entries
+			 *  @default Show _MENU_ registros
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.lengthMenu
@@ -11605,7 +11605,7 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "lengthMenu": "Display _MENU_ records"
+			 *          "lengthMenu": "Monitoreando _MENU_ registros"
 			 *        }
 			 *      } );
 			 *    } );
@@ -11627,7 +11627,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Mostrando _MENU_ registros",
 	
 	
 			/**
@@ -11646,12 +11646,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "loadingRecords": "Please wait - loading..."
+			 *          "loadingRecords": "Por favor espera - cargando..."
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Loading...",
+			"sLoadingRecords": "Cargando...",
 	
 	
 			/**
@@ -11667,12 +11667,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "processing": "DataTables is currently busy"
+			 *          "processing": "DataTables está actualmente ocupado"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processing...",
+			"sProcessing": "Procesando...",
 	
 	
 			/**
@@ -11692,7 +11692,7 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "search": "Filter records:"
+			 *          "search": "Filtrar registros:"
 			 *        }
 			 *      } );
 			 *    } );
@@ -11702,12 +11702,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "search": "Apply filter _INPUT_ to table"
+			 *          "search": "Apicar filtros _INPUT_ a la tabla"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Buscar:",
 	
 	
 			/**
@@ -11760,12 +11760,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "zeroRecords": "No records to display"
+			 *          "zeroRecords": "No hay registros que mostrar"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "No se encontraron registros coincidentes"
 		},
 	
 	
@@ -11786,7 +11786,7 @@
 		 *  @example
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
-		 *        "search": {"search": "Initial search"}
+		 *        "search": {"search": "Búsqueda inicial"}
 		 *      } );
 		 *    } )
 		 */
@@ -12575,7 +12575,7 @@
 		 *          "targets": [ 0 ],
 		 *          "data": "download_link",
 		 *          "render": function ( data, type, full ) {
-		 *            return '<a href="'+data+'">Download</a>';
+		 *            return '<a href="'+data+'">Descargar</a>';
 		 *          }
 		 *        } ]
 		 *      } );

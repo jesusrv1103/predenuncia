@@ -14,7 +14,7 @@ use Mail;
 use App\Mail\DenunciaRecibida;
 use Illuminate\Support\Facades\DB;
 
-use UxWeb\SweetAlert\SweetAlert;
+use Illuminate\Support\Carbon;
 
 
 
@@ -35,6 +35,7 @@ class PredenunciaController extends Controller
 
 
         //dd($request->get('notificacion_telefono'));
+       
         
         DB::beginTransaction();
         $denunciante=new Denunciante;
@@ -57,6 +58,7 @@ class PredenunciaController extends Controller
         $lugar_hechos->save();
         $lugar_hechos_id= $lugar_hechos->id;
         $predenuncia= new Predenuncia;
+        $predenuncia ->folio=$this->generarFolio();
         $predenuncia->denunciante_id= $denunciante_id;
         $predenuncia->lugar_hechos_id= $lugar_hechos_id;
         $predenuncia->descripcion=$request->get('descripcion');
@@ -77,10 +79,21 @@ class PredenunciaController extends Controller
         DB::commit();
         //return $request;
         $subject = "PREDENUNCIA RECIBIDA DE " .$request->get('nombre');
-         Mail::to('predenuncia@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
+         Mail::to('jramirezv@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
         // SweetAlert::message('Welcome back!');
-        return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
+         $this->generarFolio();
+        
+         return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
 
         
+    }
+
+    public function generarFolio(){
+        $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
+        $ultimoIdPredenuncia= intval($ultimoIdPredenuncia->id)+1;
+        $today = Carbon::now()->format('Y');
+        $folio=0;
+        $folio= "0".$ultimoIdPredenuncia."/".$today;
+        return $folio;
     }
 }

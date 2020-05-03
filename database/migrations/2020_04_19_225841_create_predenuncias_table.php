@@ -15,6 +15,7 @@ class CreatePredenunciasTable extends Migration
     {
         Schema::create('predenuncias', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('folio',20);
             $table->BigInteger('denunciante_id')->unsigned();
             $table->foreign('denunciante_id')->references('id')->on('denunciantes');
             $table->BigInteger('lugar_hechos_id')->unsigned();

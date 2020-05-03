@@ -14,6 +14,7 @@ class PredenunciaSeeder extends Seeder
         DB::table('predenuncias')->insert([
             [
                 "id"=> "1",
+                "folio"=> "001",
                 "denunciante_id"=> 1,
                 "lugar_hechos_id"=> 1,
                 "descripcion"=> 1,

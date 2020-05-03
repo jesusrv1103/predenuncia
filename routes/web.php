@@ -17,7 +17,7 @@ Route::post('predenuncias', 'Admin\PredenunciaController@store')->name('admin.pr
 
 Route::post('predenuncias/{id}/evidencia', 'Admin\EvidenciaPredenunciaController@store')->name('predenuncias.evidencias.store');
 
-Route::get('predenuncias/{id}/re', 'Admin\PredenunciaRecibidasController@store')->name('predenuncias.recibidas.index');
+Route::get('predenuncias/recibidas', 'Admin\PredenunciasRecibidasController@index')->name('predenuncias.recibidas.index');
 
 
 Route::get('/', function () {
@@ -25,3 +25,8 @@ Route::get('/', function () {
 });
 Auth::routes();
 
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('predenuncias/recibidas/{id}', 'Admin\PredenunciasRecibidasController@pdfPredenuncias')->name('predenuncias.recibidas.pdf');
