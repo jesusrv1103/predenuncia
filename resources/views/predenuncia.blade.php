@@ -266,7 +266,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <input type="hidden"  name="nombre_municipio" value="Apozol" id="nombre_municipio"/>
                                          
-
+                                            <input type="hidden"  name="nombre_municipio_denunciante" value="Apozol" id="nombre_municipio_denunciante"/>
+                                     
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
@@ -290,9 +291,29 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         
                                                         id="direccion_id" onchange="mayus(this);">
                                                     <span class="form-text text-muted">
-                                                        Por favor ingrese su dirección.</span>
+                                                        Por favor ingrese su dirección(Calle, numero y colonia).</span>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label">Municipio:</label>
+                                                <div class="col-10">
+                                                        <select class="form-control kt-select2"
+                                                        id="municipio_id"  style="width: 100%" onchange="datosLugarHechos();" name="municipio_id">
+                                                        <option disabled value="">Seleccione un municipio</option>
+                                                        @foreach ($municipios  as $municipio)
+                                                        <option value="{{$municipio->id}}">
+                                                            {{$municipio->nombre}}</option>
+                                                        @endforeach
+        
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor selecciona
+                                                        el
+                                                        municipio.</span>
+                                                </div>
+                                            </div>
+
+                                        
 
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Correo
@@ -403,7 +424,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <label class="col-2 col-form-label">Municipio:</label>
                                                     <div class="col-10">
                                                             <select class="form-control kt-select2"
-                                                            id="kt_select2_1" name="param" style="width: 100%" onchange="datosLugarHechos();" name="municipio_id">
+                                                             name="param" style="width: 100%" onchange="datosLugarHechos();" id="kt_select2_1">
                                                             <option disabled value="">Seleccione un municipio</option>
                                                             @foreach ($municipios  as $municipio)
                                                             <option value="{{$municipio->id}}">
@@ -740,6 +761,18 @@ function datosLugarHechos(){
         var nombreMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex].text;
         document.getElementById('nombre_municipio').value=nombreMunicipio;
     }
+
+
+
+    function datosLugarDenunciante(){
+       
+        
+       var selectMunicipio = document.getElementById("municipio_id");
+       var options=document.getElementsByTagName("option");
+       var nombreMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex].text;
+       document.getElementById('nombre_municipio_denunciante').value=nombreMunicipio;
+   }
+
 
 
 var myDropzone = new Dropzone('.dropzone', {

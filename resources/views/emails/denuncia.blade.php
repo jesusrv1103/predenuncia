@@ -20,13 +20,19 @@
             <td> {{$mensaje['nombre']}}</td>
         </tr>
         <tr>
-            <td>Domicilio: </td>
+            <td>Domicilio(Calle, numero, colonia): </td>
             <td>{{$mensaje['direccion']}}</td>
+        </tr>
+        <tr>
+            <td>Domicilio(Municipio): </td>
+            <td>{{$mensaje['nombre_municipio_denunciante']}}</td>
         </tr>
         <tr>
             <td>Correo electronico: </td>
             <td>{{$mensaje['email']}}</td>
         </tr>
+
+     
         <tr>
             <td>Telefono: </td>
             <td>{{$mensaje['telefono']}}</td>
