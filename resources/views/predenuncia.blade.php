@@ -299,8 +299,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <label class="col-2 col-form-label">Municipio:</label>
                                                 <div class="col-10">
                                                         <select class="form-control kt-select2"
-                                                        id="municipio_id"  style="width: 100%" onchange="datosLugarHechos();" name="municipio_id">
-                                                        <option disabled value="">Seleccione un municipio</option>
+                                                        id="municipio_id"  style="width: 100%" onchange="datosLugarHechos();" name="municipio_id" required>
+                                                        <option  value="">Seleccione un municipio</option>
                                                         @foreach ($municipios  as $municipio)
                                                         <option value="{{$municipio->id}}">
                                                             {{$municipio->nombre}}</option>
@@ -424,8 +424,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <label class="col-2 col-form-label">Municipio:</label>
                                                     <div class="col-10">
                                                             <select class="form-control kt-select2"
-                                                             name="param" style="width: 100%" onchange="datosLugarHechos();" id="kt_select2_1">
-                                                            <option disabled value="">Seleccione un municipio</option>
+                                                             name="param" style="width: 100%" onchange="datosLugarHechos();" id="kt_select2_1" required>
+                                                            <option  value="">Seleccione un municipio</option>
                                                             @foreach ($municipios  as $municipio)
                                                             <option value="{{$municipio->id}}">
                                                                 {{$municipio->nombre}}</option>
