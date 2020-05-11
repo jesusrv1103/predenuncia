@@ -14,6 +14,8 @@ use App\Mail\DenunciaRecibida;
 use Illuminate\Support\Facades\DB;
 use UxWeb\SweetAlert\SweetAlert;
 
+use Illuminate\Support\Carbon;
+
 class PredenunciaController extends Controller
 {
     public function index()
@@ -27,7 +29,6 @@ class PredenunciaController extends Controller
     public function store(Request $request)
     {
         //dd($request->get('notificacion_telefono'));
-
         DB::beginTransaction();
         $denunciante = new Denunciante();
         $denunciante->nombre = $request->get('nombre');
@@ -48,11 +49,12 @@ class PredenunciaController extends Controller
 
         $lugar_hechos->municipio_id = $request->get('param');
         $lugar_hechos->save();
-        $lugar_hechos_id = $lugar_hechos->id;
-        $predenuncia = new Predenuncia();
-        $predenuncia->denunciante_id = $denunciante_id;
-        $predenuncia->lugar_hechos_id = $lugar_hechos_id;
-        $predenuncia->descripcion = $request->get('descripcion');
+        $lugar_hechos_id= $lugar_hechos->id;
+        $predenuncia= new Predenuncia;
+        //$predenuncia ->folio=$this->generarFolio();
+        $predenuncia->denunciante_id= $denunciante_id;
+        $predenuncia->lugar_hechos_id= $lugar_hechos_id;
+        $predenuncia->descripcion=$request->get('descripcion');
         $predenuncia->save();
         $id_predenuncia = $predenuncia->id;
         $mensaje = $request;
@@ -64,11 +66,21 @@ class PredenunciaController extends Controller
         $evidencias = $evidencias;
 
         DB::commit();
-        //return $request;
-        //      config(['mail.from.address' => 'jramirezv@fiscaliazacatecas.gob.mx']);
-//        config(['mail.password' => '5W%#sjdj0D03b&LuX3h1']);
-        Mail::to('predenuncia@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje, $evidencias));
-        // SweetAlert::message('Welcome back!');
-        return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');
+
+         Mail::to('predenuncia@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
+
+        
+         return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;
+
+        
+    }
+
+    public function generarFolio(){
+        $ultimoIdPredenuncia= Predenuncia::latest('id')->first();
+        $ultimoIdPredenuncia= intval($ultimoIdPredenuncia->id)+1;
+        $today = Carbon::now()->format('Y');
+        $folio=0;
+        $folio= "0".$ultimoIdPredenuncia."/".$today;
+        return $folio;
     }
 }
