@@ -424,8 +424,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <label class="col-2 col-form-label">Municipio:</label>
                                                     <div class="col-10">
                                                             <select class="form-control kt-select2"
-                                                             name="param" style="width: 100%" onchange="datosLugarHechos();" id="kt_select2_1" required>
+                                                             name="param" style="width: 100%" onchange="datosLugarHechos();" id="id_municipio_hechos" required>
                                                             <option  value="">Seleccione un municipio</option>
+                                                            
                                                             @foreach ($municipios  as $municipio)
                                                             <option value="{{$municipio->id}}">
                                                                 {{$municipio->nombre}}</option>
@@ -756,7 +757,7 @@ function soloNumeros(e){
 function datosLugarHechos(){
        
         
-        var selectMunicipio = document.getElementById("kt_select2_1");
+        var selectMunicipio = document.getElementById("id_municipio_hechos");
         var options=document.getElementsByTagName("option");
         var nombreMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex].text;
         document.getElementById('nombre_municipio').value=nombreMunicipio;
