@@ -266,11 +266,12 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <input type="hidden"  name="nombre_municipio" value="Apozol" id="nombre_municipio"/>
                                          
-
+                                            <input type="hidden"  name="nombre_municipio_denunciante" value="Apozol" id="nombre_municipio_denunciante"/>
+                                     
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Nombre:</label>
+                                                    class="col-2 col-form-label">Nombre: <span style="color:red;">*</span></label>
                                                 <div class="col-10">
 
                                                     <input type="text" class="form-control" onchange="mayus(this);" name="nombre" required
@@ -284,22 +285,42 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
-                                                    class="col-2 col-form-label">Dirección:</label>
+                                                    class="col-2 col-form-label">Dirección:  <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <input type="text" class="form-control" name="direccion" required
                                                         
                                                         id="direccion_id" onchange="mayus(this);">
                                                     <span class="form-text text-muted">
-                                                        Por favor ingrese su dirección.</span>
+                                                        Por favor ingrese su dirección(Calle, numero y colonia).</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
+                                                <label class="col-2 col-form-label">Municipio:  <span style="color:red;">*</span></label>
+                                                <div class="col-10">
+                                                        <select class="form-control kt-select2"
+                                                        id="municipio_id"  style="width: 100%" onchange="datosLugarHechos();" name="municipio_id" required>
+                                                        <option  value="">Seleccione un municipio</option>
+                                                        @foreach ($municipios  as $mun)
+                                                        <option value="{{$mun->id}}">
+                                                            {{$mun->nombre}}</option>
+                                                        @endforeach
+        
+                                                    </select>
+                                                    <span class="form-text text-muted">Por favor selecciona
+                                                        el
+                                                        municipio.</span>
+                                                </div>
+                                            </div>
+
+                                        
+
+                                            <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Correo
-                                                    electrónico:</label>
+                                                    electrónico: <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <input type="email" class="form-control" name="email"
-                                                         id="correo_id">
+                                                         id="correo_id" required >
                                                     <span class="form-text text-muted">Por favor
                                                         ingrese su correo correo electrónico.</span>
                                                 </div>
@@ -329,7 +350,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         
 
                                                 <div class="form-group row" >
-                                                        <label class="col-2 col-form-label">Forma de Notificación: </label>
+                                                        <label class="col-2 col-form-label">Forma de Notificación: <span style="color:red;">*</span> </label>
                                                         <div class="col-10">
                                                         <div class="kt-checkbox-inline">
                                                             <label class="kt-checkbox">
@@ -360,14 +381,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
                                             <div class="form-group row">
-													<label for="example-date-input" class="col-2 col-form-label">Fecha de los hechos *</label>
+													<label for="example-date-input" class="col-2 col-form-label">Fecha de los hechos <span style="color:red;">*</span></label>
 													<div class="col-10">
                                                     <input class="form-control" name="fecha_hechos" type="date" value="{{now()}}"  id="example-date-input" required>
 													</div>
 												</div>
 
                                             <div class="form-group row">
-                                                <label class="col-2 col-form-label">Calle:</label>
+                                                <label class="col-2 col-form-label">Calle:  <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <input type="text" class="form-control" name="calle"
                                                          id="calle_id" required onchange="mayus(this);" >
@@ -388,7 +409,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
                                             <div class="form-group row">
-                                                    <label class="col-2 col-form-label">Colonia:</label>
+                                                    <label class="col-2 col-form-label">Colonia:  <span style="color:red;">*</span></label>
                                                     <div class="col-10">
                                                         <input type="text" class="form-control" name="colonia"
                                                              id="calle_id" required onchange="mayus(this);">
@@ -400,11 +421,12 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             
                                             <div class="form-group row">
-                                                    <label class="col-2 col-form-label">Municipio:</label>
+                                                    <label class="col-2 col-form-label">Municipio:  <span style="color:red;">*</span></label>
                                                     <div class="col-10">
                                                             <select class="form-control kt-select2"
-                                                            id="kt_select2_1" name="param" style="width: 100%" onchange="datosLugarHechos();" name="municipio_id">
-                                                            <option disabled value="">Seleccione un municipio</option>
+                                                             name="param" style="width: 100%" onchange="datosLugarDenunciante();" id="id_municipio_hechos" required>
+                                                            <option  value="">Seleccione un municipio</option>
+                                                            
                                                             @foreach ($municipios  as $municipio)
                                                             <option value="{{$municipio->id}}">
                                                                 {{$municipio->nombre}}</option>
@@ -454,7 +476,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="alert-icon"><i
                                                             class="flaticon-list-2 kt-font-brand"></i></div>
                                                     <div class="alert-text">
-                                                        <h2>Descripción de los hechos *</h2>
+                                                        <h2>Descripción de los hechos <span style="color:red;">*</span> </h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -735,11 +757,23 @@ function soloNumeros(e){
 function datosLugarHechos(){
        
         
-        var selectMunicipio = document.getElementById("kt_select2_1");
+        var selectMunicipio = document.getElementById("municipio_id");
         var options=document.getElementsByTagName("option");
         var nombreMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex].text;
         document.getElementById('nombre_municipio').value=nombreMunicipio;
     }
+
+
+
+    function datosLugarDenunciante(){
+       
+        
+       var selectMunicipio = document.getElementById("id_municipio_hechos");
+       var options=document.getElementsByTagName("option");
+       var nombreMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex].text;
+       document.getElementById('nombre_municipio_denunciante').value=nombreMunicipio;
+   }
+
 
 
 var myDropzone = new Dropzone('.dropzone', {
