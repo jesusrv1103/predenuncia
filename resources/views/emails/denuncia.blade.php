@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td>Domicilio(Municipio): </td>
-            <td>{{$mensaje['nombre_municipio_denunciante']}}</td>
+            <td>{{$mensaje['nombre_municipio']}}</td>
         </tr>
         <tr>
             <td>Correo electronico: </td>
@@ -70,7 +70,7 @@
         </tr>
         <tr>
                 <td>Municipio: </td>
-                <td>{{$mensaje['nombre_municipio']}}</td>
+                <td>{{$mensaje['nombre_municipio_denunciante']}}</td>
             </tr>
 
         <tr>
