@@ -23,7 +23,7 @@
 
     <!--end::Base Path -->
     <meta charset="utf-8" />
-    <title>BUHWAR | Login </title>
+    <title>PREDENUNCIA | Login </title>
     <meta name="description" content="Login ASP">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -70,7 +70,7 @@
     <link href="/assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
 
     <!--end::Layout Skins -->
-    <link rel="shortcut icon" href="/imagenes/buho_sinfondo.png" />
+    <link rel="shortcut icon" href="/assets/logos_fiscalia/original180x90.png" />
 </head>
 
 <!-- end::Head -->
@@ -88,7 +88,7 @@
                     <div class="kt-login__container">
                         <div class="kt-login__logo">
                             <a href="#">
-                                <img  style="width= 200px; height:200px;" src="/imagenes/buho_sinfondo.png">
+                                <img  style="width= 200px; height:200px;" src="/assets/logos_fiscalia/original180x90.png">
                             </a>
                         </div>
 
