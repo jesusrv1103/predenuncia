@@ -33,55 +33,32 @@
     <!--end::Page Vendors Styles -->
 
     <!--begin:: Global Mandatory Vendors -->
-<<<<<<< HEAD
-    <link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"
-=======
     <link href="/assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
         type="text/css" />
 
     <!--end:: Global Mandatory Vendors -->
 
     <!--begin:: Global Optional Vendors -->
  
-<<<<<<< HEAD
-    <link href="./assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"
-=======
     <link href="/assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
     <link href="/assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
     <link href="/assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
     <link href="/assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
     <link href="/assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
         type="text/css" />
 
     <!--end:: Global Optional Vendors -->
 
     <!--begin::Global Theme Styles(used by all pages) -->
-<<<<<<< HEAD
-    <link href="./assets/css/demo1/style.bundle.css" rel="stylesheet" type="text/css" />
-=======
     <link href="/assets/css/demo1/style.bundle.css" rel="stylesheet" type="text/css" />
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
     <!--end::Global Theme Styles -->
 
     <!--begin::Layout Skins(used by all pages) -->
-<<<<<<< HEAD
-    <link href="./assets/css/demo1/skins/header/base/light.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/demo1/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/demo1/skins/brand/dark.css" rel="stylesheet" type="text/css" />
-    <link href="./assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
-=======
     <link href="/assets/css/demo1/skins/header/base/light.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/demo1/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/demo1/skins/brand/dark.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/demo1/skins/aside/dark.css" rel="stylesheet" type="text/css" />
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
     <!--end::Layout Skins -->
     <link rel="shortcut icon" href="/assets/logos_fiscalia/appbanner_black70x20.png" />
@@ -187,20 +164,12 @@
 @push('styles')
 
 <!--begin::Page Vendors Styles(used by this page) -->
-<<<<<<< HEAD
-<link href="./assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-=======
 <link href="/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
 @endpush
 @push('scripts')
 
-<<<<<<< HEAD
-<script src="./assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-=======
 <script src="/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
 @endpush
 
@@ -234,17 +203,6 @@
     <!-- end::Global Config -->
 
     <!--begin:: Global Mandatory Vendors -->
-<<<<<<< HEAD
-    <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-    <script src="./assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
-=======
     <script src="/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
     <script src="/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
     <script src="/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -254,7 +212,6 @@
     <script src="/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
     <script src="/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
     <script src="/assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
     <!--end:: Global Mandatory Vendors -->
 
@@ -264,35 +221,20 @@
     <!--end:: Global Optional Vendors -->
 
     <!--begin::Global Theme Bundle(used by all pages) -->
-<<<<<<< HEAD
-    <script src="./assets/js/demo1/scripts.bundle.js" type="text/javascript"></script>
-=======
     <script src="/assets/js/demo1/scripts.bundle.js" type="text/javascript"></script>
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
     <!--end::Global Theme Bundle -->
 
     <!--begin::Page Vendors(used by this page) -->
-<<<<<<< HEAD
-    <script src="./assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
-    <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript">
-    </script>
-    <script src="./assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
-=======
     <script src="/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
     <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript">
     </script>
     <script src="/assets/vendors/custom/gmaps/gmaps.js" type="text/javascript"></script>
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
     <!--end::Page Vendors -->
 
     <!--begin::Page Scripts(used by this page) -->
-<<<<<<< HEAD
-    <script src="./assets/js/demo1/pages/dashboard.js" type="text/javascript"></script>
-=======
     <script src="/assets/js/demo1/pages/dashboard.js" type="text/javascript"></script>
->>>>>>> ab297ddc21c6a57700f81582e4bcd033b8778dc1
 
     <!--end::Page Scripts -->
     @stack('scripts')
