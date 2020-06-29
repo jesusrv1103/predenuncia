@@ -30,3 +30,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('predenuncias/recibidas/{id}', 'Admin\PredenunciasRecibidasController@pdfPredenuncias')->name('predenuncias.recibidas.pdf');
+Route::get('predenuncias/recibida/detalles/{id}', 'Admin\PredenunciasRecibidasController@detalles')->name('predenuncias.recibidas.detalles');

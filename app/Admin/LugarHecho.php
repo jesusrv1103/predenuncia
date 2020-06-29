@@ -10,4 +10,8 @@ class LugarHecho extends Model
         'fecha'
     ];
 
+
+    public function municipio(){
+        return $this->belongsTo(Municipio::class,'municipio_id');
+    }
 }

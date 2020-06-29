@@ -17,6 +17,7 @@ class DenuncianteSeeder extends Seeder
                 "id"=> "1",
                 "nombre"=> "01",
                 "direccion"=> "S/R",
+                "municipio_id"=> 2,
                 "correo_electronico"=> "S/R.",
                 "telefono"=> "S/R",
                 "created_at"=> now(),
