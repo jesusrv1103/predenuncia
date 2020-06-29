@@ -51,7 +51,7 @@ class PredenunciaController extends Controller
         $lugar_hechos->save();
         $lugar_hechos_id= $lugar_hechos->id;
         $predenuncia= new Predenuncia;
-        //$predenuncia ->folio=$this->generarFolio();
+        $predenuncia ->folio=$this->generarFolio();
         $predenuncia->denunciante_id= $denunciante_id;
         $predenuncia->lugar_hechos_id= $lugar_hechos_id;
         $predenuncia->descripcion=$request->get('descripcion');
@@ -67,7 +67,7 @@ class PredenunciaController extends Controller
 
         DB::commit();
 
-         Mail::to('predenuncia@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
+        Mail::to('predenuncia@fiscaliazacatecas.gob.mx')->send(new DenunciaRecibida($mensaje,$evidencias));
 
         
          return redirect()->back()->with('flash', 'Se ha recibido su predenuncia, personal de la Fiscalía se pondrá en contacto contigo vía correo electrónico para dar respuesta e indicar el trámite conducente.');;

@@ -17,6 +17,8 @@ class CreateDenunciantesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('direccion');
+            $table->BigInteger('municipio_id')->unsigned();
+            $table->foreign('municipio_id')->references('id')->on('municipios');
             $table->string('correo_electronico')->nullable($value = true);
             $table->string('telefono')->nullable($value = true);
             $table->boolean('notificacion_correo')->default(0);
