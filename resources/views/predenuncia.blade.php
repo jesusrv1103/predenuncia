@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- 
+<!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 8
 Author: KeenThemes
 Website: http://www.keenthemes.com/
@@ -44,7 +44,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
     <!--begin::Page Custom Styles(used by this page) -->
-    <link href="/assets/css/demo1/pages/wizard/wizard-1.css" rel="stylesheet" type="text/css" />
+   
+    <link href="/assets/app/custom/pages/faq/faq-1.css" rel="stylesheet" type="text/css" />
 
     <!--begin::Page Vendors Styles(used by this page) -->
     <link href="/assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
@@ -221,17 +222,53 @@ License: You must have a valid license purchased only from themeforest(the above
 
                         <!-- begin:: Content -->
                         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-                               
 
-                               
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class=" col-md-3">
+                                    <div class="kt-portlet ">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title">
+													Información
+												</h3>
+											</div>
+										</div>
+										<div class="kt-portlet__body">
 
-                                </div>
+											<!--begin::Accordion-->
+											<div class="accordion accordion-light  accordion-toggle-arrow" id="accordionExample2">
+												<div class="card">
+													<div class="card-header" id="headingOne2">
+														<div class="card-title" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+															Delitos Electorales
+														</div>
+													</div>
+													<div id="collapseOne2" class="collapse show" aria-labelledby="headingOne2" data-parent="#accordionExample2">
+														<div class="card-body">
+                                                            A través de este medio puedes realizar denuncias de delitos electorales tales como: <br>
+                                                            <ul>
+                                                                <li>Violencia política contra las mujeres en razón de género.</li>
+                                                                <li>Uso de programas sociales en apoyo a un precandidato(a) y o partido político.</li>
+                                                                <li>Coacción del voto.</li>
+                                                                <li>Retención de credenciales de elector.</li>
+                                                                <li>Coacción a subordinados para apoyar a un precandidato(a) o candidato(a).</li>
+                                                            </ul>
+														</div>
+													</div>
+												</div>
+											
+											
+											</div>
+
+											<!--end::Accordion-->
+										</div>
+									</div>
                                
+                                </div>
+
                                 <div class="kt-portlet col-md-6">
 
-                                    
+
 
                                     <div class="kt-portlet__head">
                                         <div class="kt-portlet__head-label">
@@ -243,7 +280,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                     @if (session()->has('flash'))
                                     <div class="alert alert-success" role="alert">
-                                            <strong>{{session('flash')}}</strong>   
+                                            <strong>{{session('flash')}}</strong>
                                       </div>
                                     @endif
 
@@ -265,9 +302,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <input type="hidden" class="form-control" value={{($ultimoIdPredenuncia ->id)+1}} name="predenuncia_id"/>
 
                                             <input type="hidden"  name="nombre_municipio" value="Apozol" id="nombre_municipio"/>
-                                         
+
                                             <input type="hidden"  name="nombre_municipio_denunciante" value="Apozol" id="nombre_municipio_denunciante"/>
-                                     
+
 
                                             <div class="form-group row">
                                                 <label for="example-text-input"
@@ -288,7 +325,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     class="col-2 col-form-label">Dirección:  <span style="color:red;">*</span></label>
                                                 <div class="col-10">
                                                     <input type="text" class="form-control" name="direccion" required
-                                                        
+
                                                         id="direccion_id" onchange="mayus(this);">
                                                     <span class="form-text text-muted">
                                                         Por favor ingrese su dirección(Calle, numero y colonia).</span>
@@ -305,7 +342,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <option value="{{$mun->id}}">
                                                             {{$mun->nombre}}</option>
                                                         @endforeach
-        
+
                                                     </select>
                                                     <span class="form-text text-muted">Por favor selecciona
                                                         el
@@ -313,7 +350,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-                                        
+
 
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-2 col-form-label">Correo
@@ -347,7 +384,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-                                        
+
 
                                                 <div class="form-group row" >
                                                         <label class="col-2 col-form-label">Forma de Notificación: <span style="color:red;">*</span> </label>
@@ -361,7 +398,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 <input type="checkbox" name="notificacion_correo"> Correo Electrónico
                                                                 <span></span>
                                                             </label>
-                                                        
+
                                                         </div>
                                                         <span class="form-text text-muted">Por favor
                                                                 selecciona la forma en que deseas recibir
@@ -419,19 +456,19 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
 
 
-                                            
+
                                             <div class="form-group row">
                                                     <label class="col-2 col-form-label">Municipio:  <span style="color:red;">*</span></label>
                                                     <div class="col-10">
                                                             <select class="form-control kt-select2"
                                                              name="param" style="width: 100%" onchange="datosLugarDenunciante();" id="id_municipio_hechos" required>
                                                             <option  value="">Seleccione un municipio</option>
-                                                            
+
                                                             @foreach ($municipios  as $municipio)
                                                             <option value="{{$municipio->id}}">
                                                                 {{$municipio->nombre}}</option>
                                                             @endforeach
-            
+
                                                         </select>
                                                         <span class="form-text text-muted">Por favor selecciona
                                                             el
@@ -439,7 +476,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     </div>
                                                 </div>
 
-                                            
+
 
 
 
@@ -457,20 +494,20 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
 
                                             <div class="form-group row">
-                                                   
+
                                                     <div class="col-12">
                                                             <label class=" col-form-label">Agregar evidencia(imagenes, pdf, audios,etc):</label>
                                                             <div class="dropzone">
 
                                                                 </div>
-                                                    
+
                                                     </div>
                                                 </div>
                                             </div>
-    
 
 
-                                           
+
+
                                             <div class="form-group form-group-last">
                                                 <div class="alert alert-secondary" role="alert">
                                                     <div class="alert-icon"><i
@@ -484,7 +521,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                                             <div class="form-group row">
-                                                
+
                                                 <div class="col-12">
                                                         <label for="example-text-input"
                                                         class=" col-form-label">Descripción:</label>
@@ -494,7 +531,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                             </div>
 
-                                            
+
 
                                             <div class="kt-portlet__foot">
                                                 <div class="kt-form__actions">
@@ -502,19 +539,19 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <div class="col-md-4">
 
                                                                 </div>
-                                                        
+
                                                         <div class="col-md-4 btn-lg">
                                                             <button type="submit"
                                                                 class="btn btn-success" id="kt_sweetalert_demo_3_3">Realizar predenuncia</button>
 
 
 
-                                                                
+
                                                         </div>
                                                         <div class="col-md-4">
 
                                                             </div>
-                                                       
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -533,7 +570,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                     <!--end::Form-->
                                 </div>
-                               
+
 
                             </div>
                             <!--begin::Portlet-->
@@ -710,9 +747,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/assets/js/demo1/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>
 <script src="/assets/js/demo1/pages/crud/forms/widgets/dropzone.js" type="text/javascript"></script>
 <script>
-    
+
     function mayus(e) {
- 
+
  e.value = e.value.toUpperCase();
 }
 
@@ -755,8 +792,8 @@ function soloNumeros(e){
 
 
 function datosLugarHechos(){
-       
-        
+
+
         var selectMunicipio = document.getElementById("municipio_id");
         var options=document.getElementsByTagName("option");
         var nombreMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex].text;
@@ -766,8 +803,8 @@ function datosLugarHechos(){
 
 
     function datosLugarDenunciante(){
-       
-        
+
+
        var selectMunicipio = document.getElementById("id_municipio_hechos");
        var options=document.getElementsByTagName("option");
        var nombreMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex].text;
@@ -797,4 +834,3 @@ var myDropzone = new Dropzone('.dropzone', {
 
 
 </html>
-
